@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <link>http://Aweiisacat.github.io/</link>
-    <description>Recent content on </description>
+    <title>經驗累積 on </title>
+    <link>http://Aweiisacat.github.io/tags/%E7%B6%93%E9%A9%97%E7%B4%AF%E7%A9%8D/</link>
+    <description>Recent content in 經驗累積 on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 12 May 2020 00:11:09 +0800</lastBuildDate>
     
-	<atom:link href="http://Aweiisacat.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://Aweiisacat.github.io/tags/%E7%B6%93%E9%A9%97%E7%B4%AF%E7%A9%8D/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -36,33 +36,6 @@
  你遇過最難的題目是什麼  說故事:
   背景
   我做了什麼</description>
-    </item>
-    
-    <item>
-      <title>Ruby on Rails postgresql在ubuntu遇到的問題</title>
-      <link>http://Aweiisacat.github.io/blog/firstblog/</link>
-      <pubDate>Sun, 10 May 2020 22:18:45 +0800</pubDate>
-      
-      <guid>http://Aweiisacat.github.io/blog/firstblog/</guid>
-      <description>當你安裝postgres時bundle install不順的時候就是你缺少一個套件就是
-sudo apt-get install libpq-dev
-開啟專案的時候一定要養成好習慣先開啟postgresql的伺服器:
-sudo service postgresql start
-錯誤還是出現說:FATAL: role “username” does not exist 找不到使用者的話，要去創跟你ubuntu一模一樣的使用者ID，指令為:
-sudo -u postgres createuser &amp;quot;username&amp;quot;
-當你進入專案時噴出FATAL: database “project_name” does not exist，那就rails db:create
-但是如果權限不夠會噴出PG::InsufficientPrivilege: ERROR: permission denied to create database Couldn’t create ‘project_name’ database. Please check your configuration.那就要去修改你的使用者權限。指令為:
-sudo su - postgres
-dropuser &amp;quot;user_name&amp;quot;
-createuser -s &amp;quot;user_name&amp;quot; \\-s意思給這個user賦予superuser
-如果你的postgres的使用者沒設定密碼的話請打以下
-sudo -u postgres psql \\進入psql環境
-postgres=# \\就代表你進去環境內了
-打上\password &amp;quot;user_name&amp;quot; \\這樣就可以改密碼囉!
-參考資料
-ruby-china.org
-blog.gtwang
-stackoverflow</description>
     </item>
     
   </channel>

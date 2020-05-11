@@ -6,9 +6,46 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
+    <lastBuildDate>Tue, 12 May 2020 00:11:09 +0800</lastBuildDate>
     
 	<atom:link href="http://Aweiisacat.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>經驗累積</title>
+      <link>http://Aweiisacat.github.io/tags/%E7%B6%93%E9%A9%97%E7%B4%AF%E7%A9%8D/</link>
+      <pubDate>Tue, 12 May 2020 00:11:09 +0800</pubDate>
+      
+      <guid>http://Aweiisacat.github.io/tags/%E7%B6%93%E9%A9%97%E7%B4%AF%E7%A9%8D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>面試</title>
+      <link>http://Aweiisacat.github.io/tags/%E9%9D%A2%E8%A9%A6/</link>
+      <pubDate>Tue, 12 May 2020 00:11:09 +0800</pubDate>
+      
+      <guid>http://Aweiisacat.github.io/tags/%E9%9D%A2%E8%A9%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debug</title>
+      <link>http://Aweiisacat.github.io/tags/debug/</link>
+      <pubDate>Sun, 10 May 2020 22:18:45 +0800</pubDate>
+      
+      <guid>http://Aweiisacat.github.io/tags/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>環境安裝</title>
+      <link>http://Aweiisacat.github.io/tags/%E7%92%B0%E5%A2%83%E5%AE%89%E8%A3%9D/</link>
+      <pubDate>Sun, 10 May 2020 22:18:45 +0800</pubDate>
+      
+      <guid>http://Aweiisacat.github.io/tags/%E7%92%B0%E5%A2%83%E5%AE%89%E8%A3%9D/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
