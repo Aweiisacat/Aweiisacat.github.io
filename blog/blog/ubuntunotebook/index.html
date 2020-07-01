@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <title>阿維貓的窩</title>
+
+<meta name="theme-color" content="" />
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<meta name="generator" content="aafu theme by Darshan in Hugo 0.72.0" />
+
+
+
+  <link
+    rel="stylesheet"
+    href="/css/bootstrap/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
+  />
+  <link rel="stylesheet" href="/css/aafu_dark.css" />
+  <link rel="stylesheet" href="/css/aafu.css" />
+
+  <script>
+    var themeColor = document.querySelector("meta[name=theme-color]");
+    window.onload = () => {
+      themeColor.content = getComputedStyle(document.body)["background-color"];
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+    window.onresize = () => {
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+  </script>
+</head>
+<body class="container">
+    <main style="min-height: calc(100vh - 60px);">
+      
+      <div class="d-flex flex-row row p-2">
+  <h3 class="main-menu mr-3">
+    <a href="http://Aweiisacat.github.io/">Home</a>
+  </h3>
+  <h3 class="main-menu mr-3">
+    <a href="/blog">Blog</a>
+  </h3>
+</div>
+
+      
+<div class="rounded p-2 aafu-border border">
+  <div class="border-bottom aafu-border">
+    <h1 class="top-h1" style="font-size: 2.75em;">Ubuntu Setting(WSL)</h1><div class="mb-2">
+  <p class="mb-1">July 1, 2020</p>
+   
+  
+  
+  
+  
+</div>
+</div>
+  <div class="content">
+    <h2 id="如何在ubuntu-設定標題以及顯示git分支">如何在Ubuntu 設定標題以及顯示git分支</h2>
+<p>第一步就是打開你的終端機確認自己的位子是在&quot;~&quot;位子，如果是Windows開發者可能會在&rdquo;/mnt/c/Users/你的User名稱&quot;打個</p>
+<pre><code>cd
+</code></pre><p>就可以回到&quot;~&quot;位子</p>
+<p>第二步就是指令</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">vim <span style="color:#f92672">.</span>bashrc <span style="color:#75715e">#進入編輯.bashrc的檔案</span>
+</code></pre></div><p>.bashrc檔案裡是關於bash的設定就是你Terminal本身，接下來就是案方向鍵案到最下面的空白處開始我們的設定</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e">#修改tab title</span>
+function title() {
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#f92672">-</span>z <span style="color:#e6db74">&#34;$ORIG&#34;</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+                <span style="color:#66d9ef">ORIG</span><span style="color:#f92672">=</span>$PS1
+        fi
+        <span style="color:#66d9ef">TITLE</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;\[</span><span style="color:#ae81ff">\e</span><span style="color:#e6db74">]2;$*</span><span style="color:#ae81ff">\a</span><span style="color:#e6db74">\]&#34;</span>
+        <span style="color:#66d9ef">PS1</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">$</span>{<span style="color:#66d9ef">ORIG</span>}<span style="color:#960050;background-color:#1e0010">$</span>{<span style="color:#66d9ef">TITLE</span>}
+}
+
+<span style="color:#75715e">#怎麼使用title，就在bash裡打 title &#34;tab name&#34;這樣就完成了</span>
+
+<span style="color:#75715e"># 顯示git 分支</span>
+
+git_branch() {
+        git branch <span style="color:#ae81ff">2</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">/dev/nu</span>ll <span style="color:#f92672">|</span>sed <span style="color:#f92672">-</span>e <span style="color:#e6db74">&#39;/^[^*]/d&#39;</span> <span style="color:#f92672">-</span>e <span style="color:#e6db74">&#39;s/* \(.*\)/(\1)/&#39;</span>
+}
+
+export <span style="color:#66d9ef">PS1</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;\[</span><span style="color:#ae81ff">\e</span><span style="color:#e6db74">]0;\u@\h: \w</span><span style="color:#ae81ff">\a</span><span style="color:#e6db74">\]${debian_chroot:+($debian_chroot)}\[</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[01;32m\]\u@\h\[</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[00m\]:\[</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[01;34m\]\w\[</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[00m\]\[</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0;31m\]\$(git_branch)\[</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[00m\]\$&#34;</span>
+
+<span style="color:#75715e">#關於PS1值的指令請打</span>
+
+echo $PS1
+
+<span style="color:#75715e">#\[\033[0;31m\]\$(git_branch) 前面的\[\033[0;31m\]\是屬於bash的色碼之後看你怎麼去設定色碼</span>
+</code></pre></div><p><a href="https://gist.github.com/vratiu/9780109">bash色碼</a></p>
+<h2 id="為了造福windows開發者">為了造福Windows開發者</h2>
+<p>五月底已經可以更新最新版本的Windows系統，並把WSL出到了WSL2，詳細資訊可以看官方文件WSL2以及WSL差別，只要知道不再是虛擬Linux系統，而是一個活生生的Linux系統在你的電腦裡，並且跑得更快。</p>
+<p>切記要開發的時候檔案請放在Linux資料夾內，如果不知道怎麼去，到自己的檔案總管把原本的路徑刪掉打上</p>
+<pre><code>\\wsl$
+</code></pre><p>就會看到Ubuntu的資料夾，點進去之後的home/user就是你bash打開的&quot;~&quot;環境，之後要用WSL開發都要在這個底下開發才會快!!!</p>
+<p>再來就是Windows商店出了一個叫做Windows Terminal，可以進行分頁式的bash</p>
+<p>這個東西就是學Mac的Terminal，Windows終於可以用啦!!!</p>
+<p>所以才會用到設定分頁名稱，這樣可以知道哪一個分頁在做什麼工作</p>
+<p>目前這個軟件還在beta階段，叫做PowerToys，它可以進行全棧搜尋，也是跟Mac一樣系統，但是目前做的搜尋功能還不是很OK，用不用就看個人了XD</p>
+
+  </div>
+</div>
+<div class="d-flex flex-row justify-content-center">
+  <h3 class="mb-1 mt-1 text-left mr-4">
+    
+    <a
+      href="/blog/%E9%9D%A2%E8%A9%A6%E6%A8%A1%E6%93%AC/"
+      title="Astro Camp 第四屆 模擬面試心得"
+    >
+      <i class="nav-menu fas fa-chevron-circle-left"></i>
+    </a>
+    
+  </h3>
+  <h3 class="mb-1 mt-1 text-left ml-4">
+    
+    <i class="nav-menu-disabled fas fa-chevron-circle-right"></i>
+    
+  </h3>
+</div>
+
+
+    </main>
+    
+    <footer class=" mt-2 mb-4 text-center ">
+  <span class="markdownify">當你跌到谷底時，那正表示，你只能往上，不能往下！</span>
+  <span style="font-size:0px;">
+    &middot;
+    <i>
+      <a href="https://github.com/darshanbaral/aafu">
+        aafu
+      </a>
+    </i>
+    by
+    <a href="https://www.darshanbaral.com/">
+      darshan
+    </a>
+  </span>
+</footer>
+
+    
+  </body>
+</html>

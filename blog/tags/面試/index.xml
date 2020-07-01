@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>面試 on </title>
+    <link>http://Aweiisacat.github.io/tags/%E9%9D%A2%E8%A9%A6/</link>
+    <description>Recent content in 面試 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 12 May 2020 00:11:09 +0800</lastBuildDate>
+    
+	<atom:link href="http://Aweiisacat.github.io/tags/%E9%9D%A2%E8%A9%A6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Astro Camp 第四屆 模擬面試心得</title>
+      <link>http://Aweiisacat.github.io/blog/%E9%9D%A2%E8%A9%A6%E6%A8%A1%E6%93%AC/</link>
+      <pubDate>Tue, 12 May 2020 00:11:09 +0800</pubDate>
+      
+      <guid>http://Aweiisacat.github.io/blog/%E9%9D%A2%E8%A9%A6%E6%A8%A1%E6%93%AC/</guid>
+      <description>在履歷方面工作經歷和學歷都要擺在最下面
+畢竟這對我來說不是一個特別搶眼的項目才建議我擺在最下面
+在履歷上的技能樹上 ruby on rails 多寫一些gem
+ 你用過多少gem才能知道你多會  css 能寫一些框架
+ 也要去了解這個框架上在開發的便利性以及怎麼用這個框架去開發  js 三大框架學一個
+ 要去透徹了解那個框架，還有他的觀念  作品集
+ url要擺出來介紹 內容要多包裝 有專有名詞  github的日記
+ 理想是能每天綠就綠，最少最少一周五天深綠。  面試過程:
+ 口條不清楚  五倍紅寶石學習過程
+ 對哪一塊有興趣，以及學習過程了解了什麼  專案:
+  內容做過什麼可以給面試官看
+  做專案的過程遇到的問題如何解決
+  解釋你做這個專案的目的是為了解決什麼問題
+  說明的過程要舉個例子，更加有說服力
+  學習的過程:
+ 遇到問題先去上網查，並把網路上的內容去理解這段code or 語法 是解決什麼問題  面試最愛考的題目:
+ 你遇過最難的題目是什麼  說故事:
+  背景
+  我做了什麼</description>
+    </item>
+    
+  </channel>
+</rss>
