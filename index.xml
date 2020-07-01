@@ -6,10 +6,30 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 12 May 2020 00:11:09 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2020 13:37:36 +0800</lastBuildDate>
     
 	<atom:link href="http://Aweiisacat.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ubuntu Setting(WSL)</title>
+      <link>http://Aweiisacat.github.io/blog/ubuntunotebook/</link>
+      <pubDate>Wed, 01 Jul 2020 13:37:36 +0800</pubDate>
+      
+      <guid>http://Aweiisacat.github.io/blog/ubuntunotebook/</guid>
+      <description>如何在Ubuntu 設定標題以及顯示git分支 第一步就是打開你的終端機確認自己的位子是在&amp;quot;~&amp;quot;位子，如果是Windows開發者可能會在&amp;rdquo;/mnt/c/Users/你的User名稱&amp;quot;打個
+cd 就可以回到&amp;quot;~&amp;quot;位子
+第二步就是指令
+vim .bashrc #進入編輯.bashrc的檔案 .bashrc檔案裡是關於bash的設定就是你Terminal本身，接下來就是案方向鍵案到最下面的空白處開始我們的設定
+#修改tab title function title() { if [[ -z &amp;#34;$ORIG&amp;#34; ]]; then ORIG=$PS1 fi TITLE=&amp;#34;\[\e]2;$*\a\]&amp;#34; PS1=${ORIG}${TITLE} } #怎麼使用title，就在bash裡打 title &amp;#34;tab name&amp;#34;這樣就完成了 # 顯示git 分支 git_branch() { git branch 2&amp;gt; /dev/null |sed -e &amp;#39;/^[^*]/d&amp;#39; -e &amp;#39;s/* \(.*\)/(\1)/&amp;#39; } export PS1=&amp;#34;\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[0;31m\]\$(git_branch)\[\033[00m\]\$&amp;#34; #關於PS1值的指令請打 echo $PS1 #\[\033[0;31m\]\$(git_branch) 前面的\[\033[0;31m\]\是屬於bash的色碼之後看你怎麼去設定色碼 bash色碼
+為了造福Windows開發者 五月底已經可以更新最新版本的Windows系統，並把WSL出到了WSL2，詳細資訊可以看官方文件WSL2以及WSL差別，只要知道不再是虛擬Linux系統，而是一個活生生的Linux系統在你的電腦裡，並且跑得更快。
+切記要開發的時候檔案請放在Linux資料夾內，如果不知道怎麼去，到自己的檔案總管把原本的路徑刪掉打上
+\\wsl$ 就會看到Ubuntu的資料夾，點進去之後的home/user就是你bash打開的&amp;quot;~&amp;quot;環境，之後要用WSL開發都要在這個底下開發才會快!!!
+再來就是Windows商店出了一個叫做Windows Terminal，可以進行分頁式的bash
+這個東西就是學Mac的Terminal，Windows終於可以用啦!!!
+所以才會用到設定分頁名稱，這樣可以知道哪一個分頁在做什麼工作
+目前這個軟件還在beta階段，叫做PowerToys，它可以進行全棧搜尋，也是跟Mac一樣系統，但是目前做的搜尋功能還不是很OK，用不用就看個人了XD</description>
+    </item>
     
     <item>
       <title>Astro Camp 第四屆 模擬面試心得</title>
