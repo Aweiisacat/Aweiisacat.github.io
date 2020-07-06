@@ -134,6 +134,65 @@
 
     </div>
     
+    <h2 class="accordion ">
+      
+      <span onclick="expandAccordion(this)" style="cursor: pointer;">
+        <i class="fas fa-cogs"></i>
+        Skills</span>
+    </h2>
+    <div
+      class="panel overflow-hidden"
+      
+      id="skill-panel"
+      
+    >
+      <script>
+  let skillPanel = document.querySelector("#skill-panel")
+    .previousElementSibling;
+  skillPanel.addEventListener("click", function() {
+    let skillBars = document.querySelectorAll("#skill-percent");
+    skillBars.forEach(elem => {
+      elem.style.width = elem.classList[0];
+    });
+  });
+</script>
+
+<code>HTML/CSS</code>
+<div class="w-100 skillbar mt-1 mb-3">
+  <div id="skill-percent" class="20%" style="width: 0;"></div>
+</div>
+
+<code>Javascript(ES6)</code>
+<div class="w-100 skillbar mt-1 mb-3">
+  <div id="skill-percent" class="60%" style="width: 0;"></div>
+</div>
+
+<code>Ruby on Rails</code>
+<div class="w-100 skillbar mt-1 mb-3">
+  <div id="skill-percent" class="20%" style="width: 0;"></div>
+</div>
+
+
+    </div>
+    
+    <h2 class="accordion ">
+      
+      <span onclick="expandAccordion(this)" style="cursor: pointer;">
+        <i class="fas fa-gamepad"></i>
+        Hobbies</span>
+    </h2>
+    <div
+      class="panel overflow-hidden"
+      
+    >
+      <ul class="pl-0">
+  
+  <li class="list-unstyled mb-2">PC FPS</li>
+  
+</ul>
+
+    </div>
+    
     <script src="/js/accordion.js"></script>
   </div>
 </div>
