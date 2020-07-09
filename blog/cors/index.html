@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <title>阿維貓的窩</title>
+
+<meta name="theme-color" content="" />
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<meta name="generator" content="aafu theme by Darshan in Hugo 0.72.0" />
+
+
+
+  <link
+    rel="stylesheet"
+    href="/css/bootstrap/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
+  />
+  <link rel="stylesheet" href="/css/aafu_dark.css" />
+  <link rel="stylesheet" href="/css/aafu.css" />
+
+  <script>
+    var themeColor = document.querySelector("meta[name=theme-color]");
+    window.onload = () => {
+      themeColor.content = getComputedStyle(document.body)["background-color"];
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+    window.onresize = () => {
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+  </script>
+</head>
+<body class="container">
+    <main style="min-height: calc(100vh - 60px);">
+      
+      <div class="d-flex flex-row row p-2">
+  <h3 class="main-menu mr-3">
+    <a href="http://Aweiisacat.github.io/">Home</a>
+  </h3>
+  <h3 class="main-menu mr-3">
+    <a href="/blog">Blog</a>
+  </h3>
+</div>
+
+      
+<div class="rounded p-2 aafu-border border">
+  <div class="border-bottom aafu-border">
+    <h1 class="top-h1" style="font-size: 2.75em;">CORS 了解跨來源資源共享</h1><div class="mb-2">
+  <p class="mb-1">July 4, 2020</p>
+   
+  
+  
+  
+  <p class="metadata-value mb-1 taxa taxa-container-div list-tags">
+    Tags: 
+    <a
+      class="pl-1 pr-1 rounded border border-secondary"
+      href="/tags/%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%A1%93%E7%9F%A5%E8%AD%98"
+      title="tags"
+    >基本技術知識</a>
+    
+    <a
+      class="pl-1 pr-1 rounded border border-secondary"
+      href="/tags/javascript"
+      title="tags"
+    >Javascript</a>
+    
+  </p>
+  
+  
+</div>
+</div>
+  <div class="content">
+    <h2 id="前言">前言</h2>
+<p>如果曾經你做過一些AJAX，你可能會所謂的CORS error，就要在後端設定CORS允許操作任何一切，但是有想過CORS是幹嘛的嗎?只是單純讓前端頭痛的方法嗎?它跟安全性有什麼關係?如果是，那為什麼我們還要進行身分驗證?如果沒有是為了解決什麼目的?</p>
+<h3 id="了解cors之前先來了解所謂的同源政策httpszhwikipediaorgzh-twe5908ce6ba90e7ad96e795a5same-origin-policy">了解CORS之前先來了解所謂的<a href="https://zh.wikipedia.org/zh-tw/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5">同源政策</a>(Same Origin Policy)</h3>
+<p>SOP是由所有現代瀏覽器實施的安全措施，它不允許從一個來源加載的腳本和資源與另一個來源進行交互。</p>
+<p>這是對Javascript的一個限制，對HTML標籤是沒有作用的。</p>
+<p>舉個例子:</p>
+<p>你的網站是http://www.example.com，你無法向http://www.test.com發出<a href="https://developer.mozilla.org/zh-TW/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest">XHR requests</a></p>
+<p>那為什麼不行就要先了解網域的格式</p>
+<p>舉個範例網址:</p>
+<p><a href="http://www.example.com/index.html">http://www.example.com/index.html</a></p>
+<p>http/https是協定、example.com是域名、index.html是檔案路徑、通訊埠(port)通常http預設的port是80</p>
+<p>只要&quot;不同協定&quot;或&quot;域名&quot;或者是&quot;port&quot;都會被認定不同源</p>
+<p><a href="http://www.example.com/background.html">http://www.example.com/background.html</a>  認定同源，原因是檔案路徑不影響</p>
+<p><a href="https://www.example.com/index.html">https://www.example.com/index.html</a>      認定不同源，原因是不同協定</p>
+<p><a href="http://example.com/index.html">http://example.com/index.html</a>           認定不同源，原因是不同域名</p>
+<p><a href="http://example.com">http://example.com</a>:81/index.html        認定不同源，原因是不同port</p>
+<p>了解了SOP就來看看什麼是CORS</p>
+<h2 id="cors跨來源資源共享">CORS(跨來源資源共享)</h2>
+<p>CORS就像是一個管理員它具備著SOP的觀念，只要它認不得這個網域域名它就認不得你，你就得滾</p>
+<p>舉個例子:</p>
+<p>你facebook網頁裡，你不小心點了一個惡意網站它對facebook發了一個請求來取得你的個人資料 or 聊天紀錄等等，這時候facebook的管理員它不認識這個網址，對方也拿不到它想要的資料了。</p>
+<h3 id="那要怎麼操作cors">那要怎麼操作CORS?</h3>
+<p>舉個例子:</p>
+<p>Ruby on Rails有個<a href="https://www.rubydoc.info/gems/rack-cors/1.1.1">rake-cors</a> gem來設定cors設定</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e">#config/application.rb</span>
+config<span style="color:#f92672">.</span>middleware<span style="color:#f92672">.</span>insert_before <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">Rack</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Cors</span> <span style="color:#66d9ef">do</span>
+  allow <span style="color:#66d9ef">do</span>
+    origins <span style="color:#e6db74">/\Aexample.com\z/</span> <span style="color:#75715e">#要用正規表達式來抓網站</span>
+    resource <span style="color:#e6db74">&#39;/api/v1/&#39;</span>, <span style="color:#e6db74">headers</span>: <span style="color:#e6db74">:any</span>, methods: <span style="color:#f92672">[</span><span style="color:#e6db74">:get</span>, <span style="color:#e6db74">:post</span>, <span style="color:#e6db74">:options</span><span style="color:#f92672">]</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p>這邊origin設定example.com，類似我開白名單，名單內容有這個人就可以進來在我的網站撈取我網站的內容</p>
+
+  </div>
+</div>
+<div class="d-flex flex-row justify-content-center">
+  <h3 class="mb-1 mt-1 text-left mr-4">
+    
+    <a
+      href="/blog/ubuntunotebook/"
+      title="Ubuntu Setting(WSL)"
+    >
+      <i class="nav-menu fas fa-chevron-circle-left"></i>
+    </a>
+    
+  </h3>
+  <h3 class="mb-1 mt-1 text-left ml-4">
+    
+    <a
+      href="/blog/rwd%E8%88%87awd%E7%9A%84%E5%B7%AE%E5%88%A5/"
+      title="RWD與AWD的差別"
+    >
+      <i class="nav-menu fas fa-chevron-circle-right"></i>
+    </a>
+    
+  </h3>
+</div>
+
+
+    </main>
+    
+    <footer class=" mt-2 mb-4 text-center ">
+  <span class="markdownify">當你跌到谷底時，那正表示，你只能往上，不能往下！</span>
+  <span style="font-size:0px;">
+    &middot;
+    <i>
+      <a href="https://github.com/darshanbaral/aafu">
+        aafu
+      </a>
+    </i>
+    by
+    <a href="https://www.darshanbaral.com/">
+      darshan
+    </a>
+  </span>
+</footer>
+
+    
+  </body>
+</html>

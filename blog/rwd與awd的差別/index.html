@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <title>阿維貓的窩</title>
+
+<meta name="theme-color" content="" />
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<meta name="generator" content="aafu theme by Darshan in Hugo 0.72.0" />
+
+
+
+  <link
+    rel="stylesheet"
+    href="/css/bootstrap/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
+  />
+  <link rel="stylesheet" href="/css/aafu_dark.css" />
+  <link rel="stylesheet" href="/css/aafu.css" />
+
+  <script>
+    var themeColor = document.querySelector("meta[name=theme-color]");
+    window.onload = () => {
+      themeColor.content = getComputedStyle(document.body)["background-color"];
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+    window.onresize = () => {
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+  </script>
+</head>
+<body class="container">
+    <main style="min-height: calc(100vh - 60px);">
+      
+      <div class="d-flex flex-row row p-2">
+  <h3 class="main-menu mr-3">
+    <a href="http://Aweiisacat.github.io/">Home</a>
+  </h3>
+  <h3 class="main-menu mr-3">
+    <a href="/blog">Blog</a>
+  </h3>
+</div>
+
+      
+<div class="rounded p-2 aafu-border border">
+  <div class="border-bottom aafu-border">
+    <h1 class="top-h1" style="font-size: 2.75em;">RWD與AWD的差別</h1><div class="mb-2">
+  <p class="mb-1">July 8, 2020</p>
+   
+  
+  
+  
+  
+</div>
+</div>
+  <div class="content">
+    <h1 id="前言">前言</h1>
+<p>在這個時代用手機看網頁已經是稀鬆平常事，身為前後端也必須要了解基本的 RWD ，但在有一天讓我知道了 AWD ，在好奇心的驅使下想與 RWD 進行比較，為什麼 AWD 適合用在什麼網站?為什麼都不會考慮使用 AWD ?</p>
+<h2 id="rwd-responsive-web-design-響應式網頁設計-與-awd-adaptive-web-design-自適應式網頁設計-的差別以及優缺點">RWD (Responsive Web Design) 響應式網頁設計 與 AWD (Adaptive Web Design) 自適應式網頁設計 的差別以及優缺點</h2>
+<p>RWD與AWD在開發上， AWD 是屬於比較麻煩的開發模式，因為它在各個裝置下都有不同的 CSS 檔，與RWD相比它只有一種 CSS 檔，所以從這邊可以了解到AWD開發是非常耗時耗力的一種網頁設計方式。</p>
+<h3 id="效能">效能:</h3>
+<p>RWD :因為所有的裝置都使用同一個 CSS 碼，所以較無法針對行動裝置做圖片顯示的最佳化，加上 RWD 網頁的機制是將資訊先下載後，再根據裝置寬度重新排列，所以會較慢。</p>
+<p>AWD :行動裝置網頁載入更快
+可針對行動裝置而做優化，將原本的大圖縮減成最合適的尺寸，減少不必要的大圖，就能加快行動裝置的網頁 loading。</p>
+<h3 id="維護效率">維護效率:</h3>
+<p>RWD :如果在大型專案裡 CSS 裡要維護會非常困難，因為只要改錯一個東西就會可能影響到其他不需要修改的地方導致畫面爆炸。</p>
+<p>AWD :因為 AWD 在各個裝置都有相對應的 CSS 檔，維護上很好維護，不用東找西找讓自己眼睛痛。</p>
+<h2 id="結尾">結尾:</h2>
+<p>研究下來發現使用 AWD 或 RWD 沒有所謂的好壞，因應專案的關係去選擇哪一種設計模式適合還有長久問題，但現在手機硬體一年比一年好的情況下 AWD 設計理念下特別突出的 UI/UX 也逐漸變得不是特別強勢，加上還有 AWD 價格比較貴，眾多才會選擇 RWD ，變成業界上的趨勢。</p>
+
+  </div>
+</div>
+<div class="d-flex flex-row justify-content-center">
+  <h3 class="mb-1 mt-1 text-left mr-4">
+    
+    <a
+      href="/blog/cors/"
+      title="CORS 了解跨來源資源共享"
+    >
+      <i class="nav-menu fas fa-chevron-circle-left"></i>
+    </a>
+    
+  </h3>
+  <h3 class="mb-1 mt-1 text-left ml-4">
+    
+    <i class="nav-menu-disabled fas fa-chevron-circle-right"></i>
+    
+  </h3>
+</div>
+
+
+    </main>
+    
+    <footer class=" mt-2 mb-4 text-center ">
+  <span class="markdownify">當你跌到谷底時，那正表示，你只能往上，不能往下！</span>
+  <span style="font-size:0px;">
+    &middot;
+    <i>
+      <a href="https://github.com/darshanbaral/aafu">
+        aafu
+      </a>
+    </i>
+    by
+    <a href="https://www.darshanbaral.com/">
+      darshan
+    </a>
+  </span>
+</footer>
+
+    
+  </body>
+</html>

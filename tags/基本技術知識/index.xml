@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>基本技術知識 on </title>
+    <link>http://Aweiisacat.github.io/tags/%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%A1%93%E7%9F%A5%E8%AD%98/</link>
+    <description>Recent content in 基本技術知識 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 04 Jul 2020 17:00:22 +0800</lastBuildDate>
+    
+	<atom:link href="http://Aweiisacat.github.io/tags/%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%A1%93%E7%9F%A5%E8%AD%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CORS 了解跨來源資源共享</title>
+      <link>http://Aweiisacat.github.io/blog/cors/</link>
+      <pubDate>Sat, 04 Jul 2020 17:00:22 +0800</pubDate>
+      
+      <guid>http://Aweiisacat.github.io/blog/cors/</guid>
+      <description>前言 如果曾經你做過一些AJAX，你可能會所謂的CORS error，就要在後端設定CORS允許操作任何一切，但是有想過CORS是幹嘛的嗎?只是單純讓前端頭痛的方法嗎?它跟安全性有什麼關係?如果是，那為什麼我們還要進行身分驗證?如果沒有是為了解決什麼目的?
+了解CORS之前先來了解所謂的同源政策(Same Origin Policy) SOP是由所有現代瀏覽器實施的安全措施，它不允許從一個來源加載的腳本和資源與另一個來源進行交互。
+這是對Javascript的一個限制，對HTML標籤是沒有作用的。
+舉個例子:
+你的網站是http://www.example.com，你無法向http://www.test.com發出XHR requests
+那為什麼不行就要先了解網域的格式
+舉個範例網址:
+http://www.example.com/index.html
+http/https是協定、example.com是域名、index.html是檔案路徑、通訊埠(port)通常http預設的port是80
+只要&amp;quot;不同協定&amp;quot;或&amp;quot;域名&amp;quot;或者是&amp;quot;port&amp;quot;都會被認定不同源
+http://www.example.com/background.html 認定同源，原因是檔案路徑不影響
+https://www.example.com/index.html 認定不同源，原因是不同協定
+http://example.com/index.html 認定不同源，原因是不同域名
+http://example.com:81/index.html 認定不同源，原因是不同port
+了解了SOP就來看看什麼是CORS
+CORS(跨來源資源共享) CORS就像是一個管理員它具備著SOP的觀念，只要它認不得這個網域域名它就認不得你，你就得滾
+舉個例子:
+你facebook網頁裡，你不小心點了一個惡意網站它對facebook發了一個請求來取得你的個人資料 or 聊天紀錄等等，這時候facebook的管理員它不認識這個網址，對方也拿不到它想要的資料了。
+那要怎麼操作CORS? 舉個例子:
+Ruby on Rails有個rake-cors gem來設定cors設定
+#config/application.rb config.middleware.insert_before 0, Rack::Cors do allow do origins /\Aexample.com\z/ #要用正規表達式來抓網站 resource &amp;#39;/api/v1/&amp;#39;, headers: :any, methods: [:get, :post, :options] end end 這邊origin設定example.com，類似我開白名單，名單內容有這個人就可以進來在我的網站撈取我網站的內容</description>
+    </item>
+    
+  </channel>
+</rss>
