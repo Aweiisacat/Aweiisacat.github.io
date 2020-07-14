@@ -6,10 +6,23 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 08 Jul 2020 18:18:54 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2020 13:58:50 +0800</lastBuildDate>
     
 	<atom:link href="http://Aweiisacat.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>var、let和const是什麼?</title>
+      <link>http://Aweiisacat.github.io/blog/var.let.const/</link>
+      <pubDate>Mon, 13 Jul 2020 13:58:50 +0800</pubDate>
+      
+      <guid>http://Aweiisacat.github.io/blog/var.let.const/</guid>
+      <description>var 、 let 和 const 的由來 以前 Javascript 沒有所謂的 let 和 const ，都是用 var 來宣告變數，直到 ES6 的出現 let 來取代 var ， 為什麼 let 出來就是來取代 var 呢?
+就好好來探討 ES6 做了什麼事情，並了解 var 、 let 、 const 這三者差別
+var 、 let 的差別 var 從以前通病就是這個變數會到處亂跑，導致看 code 的效率變差，直到了 let 的出現。
+var 和 let 的差別最簡單說法就是作用域，但是 ES6 以前沒有所謂的作用域的觀念，直到 ES6 才有。
+var 、 let 的作用域範圍在哪裡? var 的作用域範圍就是在 function 內 ， let 則是在 block ，就是 {&amp;hellip;} 裡，它除了 function 的 {&amp;hellip;} ， if 、 for 的 {&amp;hellip;} 都屬於 let 的作用域</description>
+    </item>
     
     <item>
       <title>RWD與AWD的差別</title>

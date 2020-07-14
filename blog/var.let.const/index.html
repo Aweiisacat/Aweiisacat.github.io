@@ -66,7 +66,7 @@
       
 <div class="rounded p-2 aafu-border border">
   <div class="border-bottom aafu-border">
-    <h1 class="top-h1" style="font-size: 2.75em;">var、let和const的差別</h1><div class="mb-2">
+    <h1 class="top-h1" style="font-size: 2.75em;">var、let和const是什麼?</h1><div class="mb-2">
   <p class="mb-1">July 13, 2020</p>
    
   
@@ -76,8 +76,44 @@
 </div>
 </div>
   <div class="content">
-    <h2 id="var--let-和-const-的差別">var 、 let 和 const 的差別</h2>
-<p>在 ES6 之前，宣告變數一直都只有 var ，而且以前 Javascript 沒有所謂的 block 的概念， var 的作用域限定於 Function 內， 但是在 ES6 之後，誕生出了 let 和 const ，這兩者的作用域都是 block ，所謂的 block 就是 {&hellip;} 裡，</p>
+    <h2 id="var--let-和-const-的由來">var 、 let 和 const 的由來</h2>
+<p>以前 Javascript 沒有所謂的 let 和 const ，都是用 var 來宣告變數，直到 ES6 的出現 let 來取代 var ， 為什麼 let 出來就是來取代 var 呢?</p>
+<p>就好好來探討 ES6 做了什麼事情，並了解 var 、 let 、 const 這三者差別</p>
+<h2 id="var--let-的差別">var 、 let 的差別</h2>
+<p>var 從以前通病就是這個變數會到處亂跑，導致看 code 的效率變差，直到了 let 的出現。</p>
+<p>var 和 let 的差別最簡單說法就是作用域，但是 ES6 以前沒有所謂的作用域的觀念，直到 ES6 才有。</p>
+<h3 id="var--let-的作用域範圍在哪裡">var 、 let 的作用域範圍在哪裡?</h3>
+<p>var 的作用域範圍就是在 function 內 ， let 則是在 block ，就是 {&hellip;} 裡，它除了 function 的 {&hellip;} ， if 、 for 的 {&hellip;} 都屬於 let 的作用域</p>
+<p>這樣看下來是不是很難想像他們作用域的差別是什麼，我們就舉個例子</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">hello</span>(){
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">man</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;爸爸&#39;</span>
+
+  <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">true</span>){
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">man</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;老王&#39;</span>
+    <span style="color:#75715e">// 這裡的 man 依然是外層的爸爸，所以爸爸會被老王取代
+</span><span style="color:#75715e"></span>  }
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">man</span>)
+  <span style="color:#75715e">// 老王
+</span><span style="color:#75715e"></span>}
+<span style="color:#a6e22e">hello</span>();
+</code></pre></div><p>但是我們換成用 let 宣告的方式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">hello</span>(){
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">man</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;爸爸&#39;</span>;
+
+  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">ture</span>){
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">man</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;老王&#39;</span>;
+    <span style="color:#75715e">//此處的老王只有在這個 block 範圍內有效
+</span><span style="color:#75715e"></span>  }
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">man</span>);
+  <span style="color:#75715e">// 爸爸
+</span><span style="color:#75715e"></span>}
+<span style="color:#a6e22e">hello</span>();
+</code></pre></div><p>這樣看下來是不是覺得 var 和 let 的差別有點感覺</p>
+<p>let 的出現也可以更清楚知道每個變數都在作用域，也不會到處感染變數名稱，真的是好處多多阿!</p>
+<h3 id="const-是什麼">const 是什麼?</h3>
+<p>const 的作用域也是在 block ，但它是屬於不可變的變數，簡單來說就是常數，對於閱讀程式碼的人來說很好判斷這變數是不能被改變的。</p>
+<h2 id="結尾">結尾</h2>
+<p>因此往後開發專案宣告變數都是以 const 和 let 來宣告變數，並非是 var ，除了讓開發的專案更加穩定外，也可以增加程式碼的可讀性。</p>
 
   </div>
 </div>
