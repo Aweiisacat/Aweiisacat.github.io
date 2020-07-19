@@ -6,10 +6,35 @@
     <description>Recent content in My Blog on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 13 Jul 2020 13:58:50 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2020 17:00:22 +0800</lastBuildDate>
     
 	<atom:link href="http://Aweiisacat.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CORS 了解跨來源資源共享</title>
+      <link>http://Aweiisacat.github.io/blog/cors/</link>
+      <pubDate>Fri, 17 Jul 2020 17:00:22 +0800</pubDate>
+      
+      <guid>http://Aweiisacat.github.io/blog/cors/</guid>
+      <description>前言 在做 Chrome Extension 的登入登出的時候，遇到了所謂的 CORS 的問題，當時並沒有了解它本身，只是想盡辦法讓資料成功打到 Server 端並回傳一個資料給 Extension 儲存下來，結束之後決定來深入了解 CORS 是什麼。
+了解 CORS 之前先來了解所謂的同源政策(Same Origin Policy) SOP 是由所有瀏覽器實施的安全措施，它不允許從一個來源加載的腳本和資源與另一個來源進行交互。
+這是對於 JavaScript 的一個限制。
+舉個例子:
+你的網站是 http://www.example.com，你無法向 http://www.test.com 發出XHR requests
+那為什麼不行就要先了解網域的格式
+舉個範例網址:
+http://www.example.com/index.html
+http/https 是協定、 example.com 是域名、通訊埠( port )通常 http 預設的 port 是80
+只要&amp;quot;不同協定&amp;quot;或&amp;quot;域名&amp;quot;或者是&amp;quot;port&amp;quot;都會被認定不同源
+http://www.example.com/background.html 認定同源，原因是檔案路徑不影響
+https://www.example.com/index.html 認定不同源，原因是不同協定
+http://example.com/index.html 認定不同源，原因是不同域名
+http://example.com:81/index.html 認定不同源，原因是不同port
+了解完 SOP 就來看看什麼是 CORS 。
+CORS(跨來源資源共享) CORS 出現的意義就是為了繞過 SOP ， Origin 是 Server 端的網域名單，只要名單內沒有這串網域就會被 SOP 擋住， Server 端也能限制名單內網域用哪些方法例如:
+get 或 post</description>
+    </item>
     
     <item>
       <title>var、let和const是什麼?</title>
@@ -17,7 +42,7 @@
       <pubDate>Mon, 13 Jul 2020 13:58:50 +0800</pubDate>
       
       <guid>http://Aweiisacat.github.io/blog/var.let.const/</guid>
-      <description>var 、 let 和 const 的由來 以前 Javascript 沒有所謂的 let 和 const ，都是用 var 來宣告變數，直到 ES6 的出現 let 來取代 var ， 為什麼 let 出來就是來取代 var 呢?
+      <description>var 、 let 和 const 的由來 以前 JavaScript 沒有所謂的 let 和 const ，都是用 var 來宣告變數，直到 ES6 的出現 let 來取代 var ， 為什麼 let 出來就是來取代 var 呢?
 就好好來探討 ES6 做了什麼事情，並了解 var 、 let 、 const 這三者差別
 var 、 let 的差別 var 從以前通病就是這個變數會到處亂跑，導致看 code 的效率變差，直到了 let 的出現。
 var 和 let 的差別最簡單說法就是作用域，但是 ES6 以前沒有所謂的作用域的觀念，直到 ES6 才有。

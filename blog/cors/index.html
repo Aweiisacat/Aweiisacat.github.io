@@ -67,7 +67,7 @@
 <div class="rounded p-2 aafu-border border">
   <div class="border-bottom aafu-border">
     <h1 class="top-h1" style="font-size: 2.75em;">CORS 了解跨來源資源共享</h1><div class="mb-2">
-  <p class="mb-1">July 4, 2020</p>
+  <p class="mb-1">July 17, 2020</p>
    
   
   
@@ -84,7 +84,7 @@
       class="pl-1 pr-1 rounded border border-secondary"
       href="/tags/javascript"
       title="tags"
-    >Javascript</a>
+    >JavaScript</a>
     
   </p>
   
@@ -93,37 +93,75 @@
 </div>
   <div class="content">
     <h2 id="前言">前言</h2>
-<p>如果曾經你做過一些AJAX，你可能會所謂的CORS error，就要在後端設定CORS允許操作任何一切，但是有想過CORS是幹嘛的嗎?只是單純讓前端頭痛的方法嗎?它跟安全性有什麼關係?如果是，那為什麼我們還要進行身分驗證?如果沒有是為了解決什麼目的?</p>
-<h3 id="了解cors之前先來了解所謂的同源政策httpszhwikipediaorgzh-twe5908ce6ba90e7ad96e795a5same-origin-policy">了解CORS之前先來了解所謂的<a href="https://zh.wikipedia.org/zh-tw/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5">同源政策</a>(Same Origin Policy)</h3>
-<p>SOP是由所有現代瀏覽器實施的安全措施，它不允許從一個來源加載的腳本和資源與另一個來源進行交互。</p>
-<p>這是對Javascript的一個限制，對HTML標籤是沒有作用的。</p>
+<p>在做 Chrome Extension 的登入登出的時候，遇到了所謂的 CORS 的問題，當時並沒有了解它本身，只是想盡辦法讓資料成功打到 Server 端並回傳一個資料給 Extension 儲存下來，結束之後決定來深入了解 CORS 是什麼。</p>
+<h3 id="了解-cors-之前先來了解所謂的同源政策httpszhwikipediaorgzh-twe5908ce6ba90e7ad96e795a5same-origin-policy">了解 CORS 之前先來了解所謂的<a href="https://zh.wikipedia.org/zh-tw/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5">同源政策</a>(Same Origin Policy)</h3>
+<p>SOP 是由所有瀏覽器實施的安全措施，它不允許從一個來源加載的腳本和資源與另一個來源進行交互。</p>
+<p>這是對於 JavaScript 的一個限制。</p>
 <p>舉個例子:</p>
-<p>你的網站是http://www.example.com，你無法向http://www.test.com發出<a href="https://developer.mozilla.org/zh-TW/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest">XHR requests</a></p>
+<p>你的網站是 <a href="http://www.example.com">http://www.example.com</a>，你無法向 <a href="http://www.test.com">http://www.test.com</a> 發出<a href="https://developer.mozilla.org/zh-TW/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest">XHR requests</a></p>
 <p>那為什麼不行就要先了解網域的格式</p>
 <p>舉個範例網址:</p>
 <p><a href="http://www.example.com/index.html">http://www.example.com/index.html</a></p>
-<p>http/https是協定、example.com是域名、index.html是檔案路徑、通訊埠(port)通常http預設的port是80</p>
+<p>http/https 是協定、 example.com 是域名、通訊埠( port )通常 http 預設的 port 是80</p>
 <p>只要&quot;不同協定&quot;或&quot;域名&quot;或者是&quot;port&quot;都會被認定不同源</p>
 <p><a href="http://www.example.com/background.html">http://www.example.com/background.html</a>  認定同源，原因是檔案路徑不影響</p>
 <p><a href="https://www.example.com/index.html">https://www.example.com/index.html</a>      認定不同源，原因是不同協定</p>
 <p><a href="http://example.com/index.html">http://example.com/index.html</a>           認定不同源，原因是不同域名</p>
 <p><a href="http://example.com">http://example.com</a>:81/index.html        認定不同源，原因是不同port</p>
-<p>了解了SOP就來看看什麼是CORS</p>
+<p>了解完 SOP 就來看看什麼是 CORS 。</p>
 <h2 id="cors跨來源資源共享">CORS(跨來源資源共享)</h2>
-<p>CORS就像是一個管理員它具備著SOP的觀念，只要它認不得這個網域域名它就認不得你，你就得滾</p>
-<p>舉個例子:</p>
-<p>你facebook網頁裡，你不小心點了一個惡意網站它對facebook發了一個請求來取得你的個人資料 or 聊天紀錄等等，這時候facebook的管理員它不認識這個網址，對方也拿不到它想要的資料了。</p>
-<h3 id="那要怎麼操作cors">那要怎麼操作CORS?</h3>
-<p>舉個例子:</p>
-<p>Ruby on Rails有個<a href="https://www.rubydoc.info/gems/rack-cors/1.1.1">rake-cors</a> gem來設定cors設定</p>
+<p>CORS 出現的意義就是為了繞過 SOP ， Origin 是 Server 端的網域名單，只要名單內沒有這串網域就會被 SOP 擋住， Server 端也能限制名單內網域用哪些方法例如:</p>
+<p>get 或 post</p>
+<h4 id="所說的方法有">所說的方法有</h4>
+<ul>
+<li>
+<p>get</p>
+</li>
+<li>
+<p>post</p>
+</li>
+<li>
+<p>options</p>
+</li>
+</ul>
+<p>說了這麼多我們來舉個例子來更了解狀況:</p>
+<p>有一天你用 Facebook 點了一個惡意網站，這網站會向 Facebook 提出請求要取你的個人資料， Facebook 發現這位客人不認識而被 SOP 給擋住。</p>
+<p>但是 SOP 也僅僅只是對瀏覽器的限制並不會對 Server 禁止訪問， Server 可以進行 <a href="https://zh.wikipedia.org/zh-tw/CURL">cURL</a> 來發出請求或者是 Postman</p>
+<h3 id="cors-請求方式">CORS 請求方式</h3>
+<p>但是 CORS 有兩種請求方式 simple requests (簡單請求) 和 preflight requests (預檢請求) ，來分析簡單請求和預檢請求差在哪裡</p>
+<p>先來討論簡單請求，簡單請求只要符合以下所有條件就是簡單請求:</p>
+<ol>
+<li>
+<p>打 API 的 method 只要是 get 、 post 或 HEAD</p>
+</li>
+<li>
+<p>Content-Type header:</p>
+</li>
+</ol>
+<ul>
+<li>application/x-www-form-urlencoded</li>
+<li>multipart/form-data</li>
+<li>text/plain</li>
+</ul>
+<p>這兩個就可以構成大多數的簡單請求的用例，但想知道詳細列表可以到 <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS#%E5%AD%98%E5%8F%96%E6%8E%A7%E5%88%B6%E6%83%85%E5%A2%83%E7%AF%84%E4%BE%8B">MDN</a></p>
+<p>預檢請求:</p>
+<p>不滿足於簡單請求的條件就是預檢請求，最常看到不滿足條件的要求是:</p>
+<ul>
+<li>Cotent-Type: application/json</li>
+</ul>
+<p>預檢會以 HTTP 的 options 發出請求到 Server，確認 API 內容是否安全並送出，由於跨站請求可能會攜帶使用者資料 例如: cookie</p>
+<h3 id="遇到-cors-問題並怎麼操作">遇到 CORS 問題，並怎麼操作?</h3>
+<p>以 Ruby on Rails 為例子:</p>
+<p>有個 <a href="https://www.rubydoc.info/gems/rack-cors/1.1.1">rake-cors</a> gem Rails 裡來輕鬆操作 CORS 設定</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e">#config/application.rb</span>
 config<span style="color:#f92672">.</span>middleware<span style="color:#f92672">.</span>insert_before <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">Rack</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Cors</span> <span style="color:#66d9ef">do</span>
   allow <span style="color:#66d9ef">do</span>
-    origins <span style="color:#e6db74">/\Aexample.com\z/</span> <span style="color:#75715e">#要用正規表達式來抓網站</span>
-    resource <span style="color:#e6db74">&#39;/api/v1/&#39;</span>, <span style="color:#e6db74">headers</span>: <span style="color:#e6db74">:any</span>, methods: <span style="color:#f92672">[</span><span style="color:#e6db74">:get</span>, <span style="color:#e6db74">:post</span>, <span style="color:#e6db74">:options</span><span style="color:#f92672">]</span>
+    origins <span style="color:#e6db74">/\Aexample.com\z/</span> <span style="color:#75715e">#這就是所說的名單</span>
+    resource <span style="color:#e6db74">&#39;/api/v1/&#39;</span>, <span style="color:#e6db74">headers</span>: <span style="color:#e6db74">:any</span>, methods: <span style="color:#f92672">[</span><span style="color:#e6db74">:get</span>, <span style="color:#e6db74">:post</span>, <span style="color:#e6db74">:options</span><span style="color:#f92672">]</span> <span style="color:#75715e">#限制客人這三個方法能用哪幾個來拜訪我的網站</span>
   <span style="color:#66d9ef">end</span>
 <span style="color:#66d9ef">end</span>
-</code></pre></div><p>這邊origin設定example.com，類似我開白名單，名單內容有這個人就可以進來在我的網站撈取我網站的內容</p>
+</code></pre></div><h2 id="結論">結論</h2>
+<p>我們在過程知道了什麼是 SOP 和 CORS ，也知道瀏覽器針對不同的 header 針對 CORS 處理 API 的不同方式，最後也研究了對 Server 端怎麼操作 CORS 解決跨來源請求的錯誤。</p>
 
   </div>
 </div>
@@ -131,8 +169,8 @@ config<span style="color:#f92672">.</span>middleware<span style="color:#f92672">
   <h3 class="mb-1 mt-1 text-left mr-4">
     
     <a
-      href="/blog/ubuntunotebook/"
-      title="Ubuntu Setting(WSL)"
+      href="/blog/var.let.const/"
+      title="var、let和const是什麼?"
     >
       <i class="nav-menu fas fa-chevron-circle-left"></i>
     </a>
@@ -140,12 +178,7 @@ config<span style="color:#f92672">.</span>middleware<span style="color:#f92672">
   </h3>
   <h3 class="mb-1 mt-1 text-left ml-4">
     
-    <a
-      href="/blog/rwd%E8%88%87awd%E7%9A%84%E5%B7%AE%E5%88%A5/"
-      title="RWD與AWD的差別"
-    >
-      <i class="nav-menu fas fa-chevron-circle-right"></i>
-    </a>
+    <i class="nav-menu-disabled fas fa-chevron-circle-right"></i>
     
   </h3>
 </div>

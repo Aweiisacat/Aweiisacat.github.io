@@ -6,17 +6,26 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 13 Jul 2020 13:58:50 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2020 17:00:22 +0800</lastBuildDate>
     
 	<atom:link href="http://Aweiisacat.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Javascript</title>
+      <title>JavaScript</title>
       <link>http://Aweiisacat.github.io/tags/javascript/</link>
-      <pubDate>Mon, 13 Jul 2020 13:58:50 +0800</pubDate>
+      <pubDate>Fri, 17 Jul 2020 17:00:22 +0800</pubDate>
       
       <guid>http://Aweiisacat.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>基本技術知識</title>
+      <link>http://Aweiisacat.github.io/tags/%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%A1%93%E7%9F%A5%E8%AD%98/</link>
+      <pubDate>Fri, 17 Jul 2020 17:00:22 +0800</pubDate>
+      
+      <guid>http://Aweiisacat.github.io/tags/%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%A1%93%E7%9F%A5%E8%AD%98/</guid>
       <description></description>
     </item>
     
