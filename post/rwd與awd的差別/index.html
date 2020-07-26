@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light"><head>
-    <title> 阿維貓的窩 | JavaScript </title>
+    <title> 阿維貓的窩 | RWD與AWD的差別 </title>
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.74.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="當你跌到谷底時，那正表示，你只能往上，不能往下！ ">
     
@@ -10,16 +10,15 @@
     <link rel="apple-touch-icon" sizes="180x180" href="http://example.org/favicons/cat16x16.icoapple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="http://example.org/favicons/cat16x16.icofavicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="http://example.org/favicons/cat16x16.icofavicon-16x16.png">
-    <link rel="canonical" href="http://example.org/tags/javascript/">
-    <link rel="alternate" type="application/rss+xml" href="http://example.org/tags/javascript/index.xml" title="Website of Jane Doe" />
+    <link rel="canonical" href="http://example.org/post/rwd%E8%88%87awd%E7%9A%84%E5%B7%AE%E5%88%A5/">
     
     
     <script type="text/javascript" src="http://example.org/js/anatole-header.min.c275265a259296f3dd50e8236a77fcbcadb1dbb9597d3045c675dcc2c7c58a93.js" integrity="sha256-wnUmWiWSlvPdUOgjanf8vK2x27lZfTBFxnXcwsfFipM=" crossorigin="anonymous"></script>
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/images/cat.png"/>
 
-<meta name="twitter:title" content="JavaScript"/>
-<meta name="twitter:description" content="當你跌到谷底時，那正表示，你只能往上，不能往下！ "/>
+<meta name="twitter:title" content="RWD與AWD的差別"/>
+<meta name="twitter:description" content="前言 在這個時代用手機看網頁已經是稀鬆平常事，身為前後端也必須要了解基本的 RWD ，但在有一天讓我知道了 AWD ，在好奇心的驅使下想與 RWD 進行比較，為什麼 AWD 適合用在什麼網站?為什麼都不會考慮使用 AWD ?"/>
 
 </head><body><div class="sidebar animated fadeInDown">
     <div class="logo-title">
@@ -83,30 +82,51 @@
 
             <div class="autopagerize_page_element">
                 <div class="content">
-<div class="archive animated fadeInDown">
-   
-    <ul class="list-with-title">
+<div class="post animated fadeInDown">
+    <div class="post-content">
+
+      <div class="post-title">
+        <h3>RWD與AWD的差別
+        </h3>
+        
+        <div class="info">
+          <i class="fa fa-sun-o"></i><span class="date">Wed, Jul 8, 2020</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">1-minute read</span>
+        </div>
+        
+        </div>
+
+    <h2 id="前言">前言</h2>
+<p>在這個時代用手機看網頁已經是稀鬆平常事，身為前後端也必須要了解基本的 RWD ，但在有一天讓我知道了 AWD ，在好奇心的驅使下想與 RWD 進行比較，為什麼 AWD 適合用在什麼網站?為什麼都不會考慮使用 AWD ?</p>
+<h2 id="rwd-responsive-web-design-響應式網頁設計-與-awd-adaptive-web-design-自適應式網頁設計-的差別以及優缺點">RWD (Responsive Web Design) 響應式網頁設計 與 AWD (Adaptive Web Design) 自適應式網頁設計 的差別以及優缺點</h2>
+<p>RWD與AWD在開發上， AWD 是屬於比較麻煩的開發模式，因為它在各個裝置下都有不同的 CSS 檔，與RWD相比它只有一種 CSS 檔，所以從這邊可以了解到AWD開發是非常耗時耗力的一種網頁設計方式。</p>
+<h3 id="效能">效能:</h3>
+<p>RWD :因為所有的裝置都使用同一個 CSS 碼，所以較無法針對行動裝置做圖片顯示的最佳化，加上 RWD 網頁的機制是將資訊先下載後，再根據裝置寬度重新排列，所以會較慢。</p>
+<p>AWD :行動裝置網頁載入更快 可針對行動裝置而做優化，將原本的大圖縮減成最合適的尺寸，減少不必要的大圖，就能加快行動裝置的網頁 loading。</p>
+<h3 id="維護效率">維護效率:</h3>
+<p>RWD :如果在大型專案裡 CSS 裡要維護會非常困難，因為只要改錯一個東西就會可能影響到其他不需要修改的地方導致畫面爆炸。</p>
+<p>AWD :因為 AWD 在各個裝置都有相對應的 CSS 檔，維護上很好維護，不用東找西找讓自己眼睛痛。</p>
+<h3 id="結尾">結尾:</h3>
+<p>研究下來發現使用 AWD 或 RWD 沒有所謂的好壞，因應專案的關係去選擇哪一種設計模式適合還有長久問題，但現在手機硬體一年比一年好的情況下 AWD 設計理念下特別突出的 UI/UX 也逐漸變得不是特別強勢，加上還有 AWD 價格比較貴，眾多才會選擇 RWD ，變成業界上的趨勢。</p>
+<h4 id="參考資料">參考資料</h4>
+<p><a href="https://www.iware.com.tw/blog-%E4%BB%80%E9%BA%BC%E6%98%AF%E9%81%A9%E6%87%89%E5%BC%8F%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88(AWD)%EF%BC%9F.html">什麼是適應式網頁設計(AWD)?</a></p>
+<p><a href="https://start-up123.blogspot.com/2019/04/Difference-between-RWD-and-AWD.html">RWD和AWD是啥?差別又是什麼?前端工程師課程大解密!</a></p>
+
+    </div>
+    <div class="post-footer">
+      <div class="info">
+        
+        
+    <span class="separator"><a class="tag" href="/tags/%E5%89%8D%E7%AB%AF%E8%A8%AD%E8%A8%88/">前端設計</a></span>
+
+      </div>
+    </div>
+
+    
            
-      <div class="listing-title">2020</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="http://example.org/post/cors/" title="CORS了解跨來源資源共享">CORS了解跨來源資源共享</a>
-              <div class="post-time"><span class="date">Jul 17</span></div>
-            </div>
-          </div>
-    </ul>
     
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="http://example.org/post/varlet%E5%92%8Cconst%E7%9A%84%E5%B7%AE%E5%88%A5/" title="Var、let和const的差別">Var、let和const的差別</a>
-              <div class="post-time"><span class="date">Jul 13</span></div>
-            </div>
-          </div>
-    </ul>
-    
-    
-  </div>
+</div>
+
 
                 </div>
             </div>

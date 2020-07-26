@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light"><head>
+    <title> 阿維貓的窩 | Var、let和const的差別 </title>
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.74.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="當你跌到谷底時，那正表示，你只能往上，不能往下！ ">
+    
+    <link rel="stylesheet" href="http://example.org/css/style.min.67cd718c0a3c8009c771494d381fb7128246a454bd0518fed97cb65d257db948.css" integrity="sha256-Z81xjAo8gAnHcUlNOB&#43;3EoJGpFS9BRj&#43;2Xy2XSV9uUg=" crossorigin="anonymous" type="text/css"><link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <link rel="shortcut icon" href="http://example.org/favicons/cat16x16.icofavicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://example.org/favicons/cat16x16.icoapple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="http://example.org/favicons/cat16x16.icofavicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="http://example.org/favicons/cat16x16.icofavicon-16x16.png">
+    <link rel="canonical" href="http://example.org/post/varlet%E5%92%8Cconst%E7%9A%84%E5%B7%AE%E5%88%A5/">
+    
+    
+    <script type="text/javascript" src="http://example.org/js/anatole-header.min.c275265a259296f3dd50e8236a77fcbcadb1dbb9597d3045c675dcc2c7c58a93.js" integrity="sha256-wnUmWiWSlvPdUOgjanf8vK2x27lZfTBFxnXcwsfFipM=" crossorigin="anonymous"></script>
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/images/cat.png"/>
+
+<meta name="twitter:title" content="Var、let和const的差別"/>
+<meta name="twitter:description" content="var 、 let 和 const 的由來 以前 JavaScript 沒有所謂的 let 和 const ，都是用 var 來宣告變數，直到 ES6 的出現 let 來取代 var ， 為什麼 let 出來就是來取代 var 呢?"/>
+
+</head><body><div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src="http://example.org/images/cat.jpg" alt="profile picture">
+        <h3 title=""><a href="/">劉家維</a></h3>
+        <div class="description">
+          <p>當你跌到谷底時，那正表示，你只能往上，不能往下！ </p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+        
+        <li>
+        <a href="https://twitter.com/aweiisacat" rel="me" aria-label="Linkedin">
+          <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
+        </a>          
+        </li>
+
+        
+        <li>
+        <a href="https://github.com/Aweiisacat" rel="me" aria-label="GitHub">
+          <i class="fa fa-2x fa-github" aria-hidden="true"></i>
+        </a>          
+        </li>
+
+        
+        <li>
+        <a href="mailto:face992302@gmail.com" rel="me" aria-label="e-mail">
+          <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
+        </a>          
+        </li>
+
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; 阿維貓的窩 2020 </div>
+      </div>
+    </div>
+</div><div class="main">
+            <div class="page-top animated fadeInDown">
+    <ul class="nav">
+        
+        
+        
+        <li><a  href="/" title="">Home</a></li>
+        
+        
+        <li><a  href="/post/" title="">Posts</a></li>
+        
+        
+        <li><a  href="/about/" title="">About</a></li>
+        
+    </ul>
+    <div class="themeswitcher">
+        <a class="theme-switch" title="Switch Theme">
+            <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </a>
+    </div>
+</div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+<div class="post animated fadeInDown">
+    <div class="post-content">
+
+      <div class="post-title">
+        <h3>Var、let和const的差別
+        </h3>
+        
+        <div class="info">
+          <i class="fa fa-sun-o"></i><span class="date">Mon, Jul 13, 2020</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">1-minute read</span>
+        </div>
+        
+        </div>
+
+    <h2 id="var--let-和-const-的由來">var 、 let 和 const 的由來</h2>
+<p>以前 JavaScript 沒有所謂的 let 和 const ，都是用 var 來宣告變數，直到 ES6 的出現 let 來取代 var ， 為什麼 let 出來就是來取代 var 呢?</p>
+<p>就好好來探討 ES6 做了什麼事情，並了解 var 、 let 、 const 這三者差別</p>
+<h2 id="var--let-的差別">var 、 let 的差別</h2>
+<p>var 從以前通病就是這個變數會到處亂跑，導致看 code 的效率變差，直到了 let 的出現。</p>
+<p>var 和 let 的差別最簡單說法就是作用域，但是 ES6 以前沒有所謂的作用域的觀念，直到 ES6 才有。</p>
+<h2 id="var--let-的作用域範圍在哪裡">var 、 let 的作用域範圍在哪裡?</h2>
+<p>var 的作用域範圍就是在 function 內 ， let 則是在 block ，就是 {…} 裡，它除了 function 的 {…} ， if 、 for 的 {…} 都屬於 let 的作用域</p>
+<p>這樣看下來是不是很難想像他們作用域的差別是什麼，我們就舉個例子</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">hello</span>(){
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">man</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;爸爸&#39;</span>
+
+  <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">true</span>){
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">man</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;老王&#39;</span>
+    <span style="color:#75715e">// 這裡的 man 依然是外層的爸爸，所以爸爸會被老王取代
+</span><span style="color:#75715e"></span>  }
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">man</span>)
+  <span style="color:#75715e">// 老王
+</span><span style="color:#75715e"></span>}
+<span style="color:#a6e22e">hello</span>();
+</code></pre></div><p>但是我們換成用 let 宣告的方式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">hello</span>(){
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">man</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;爸爸&#39;</span>;
+
+  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">ture</span>){
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">man</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;老王&#39;</span>;
+    <span style="color:#75715e">//此處的老王只有在這個 block 範圍內有效
+</span><span style="color:#75715e"></span>  }
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">man</span>);
+  <span style="color:#75715e">// 爸爸
+</span><span style="color:#75715e"></span>}
+<span style="color:#a6e22e">hello</span>();
+</code></pre></div><p>這樣看下來是不是覺得 var 和 let 的差別有點感覺</p>
+<p>let 的出現也可以更清楚知道每個變數都在作用域，也不會到處感染變數名稱，真的是好處多多阿!</p>
+<h3 id="const-是什麼">const 是什麼?</h3>
+<p>const 的作用域也是在 block ，但它是屬於不可變的變數，簡單來說就是常數，對於閱讀程式碼的人來說很好判斷這變數是不能被改變的。</p>
+<h2 id="結尾">結尾</h2>
+<p>在這邊可以更了解 var 和 let 這兩者的差別，也知道往後開發專案宣告變數都是以 const 和 let 來宣告變數，並非是 var ，除了讓開發的專案更加穩定外，也可以增加程式碼的可讀性。</p>
+<h2 id="參考資料">參考資料</h2>
+<p><a href="https://medium.com/@realdennis/%E9%96%92%E8%81%8A-var%E8%88%87let%E7%9A%84%E6%87%B6%E4%BA%BA%E5%8C%85-javascript-b5a3f40ee28d">用 1 分鐘簡單地了解 — JavaScript中 var 與 let 的主要差別</a></p>
+<p><a href="https://medium.com/@totoroLiu/javascript-var-let-const-%E5%B7%AE%E7%95%B0-e3d930521230">JavaScript: var, let, const 差異</a></p>
+
+    </div>
+    <div class="post-footer">
+      <div class="info">
+        
+        
+    <span class="separator"><a class="tag" href="/tags/javascript/">JavaScript</a></span>
+
+      </div>
+    </div>
+
+    
+           
+    
+</div>
+
+
+                </div>
+            </div>
+        </div>
+</body>
+
+
+
+<script type="text/javascript" src="http://example.org/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js" integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript" src="http://example.org/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js" integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="http://example.org/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js" integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro=" crossorigin="anonymous"></script></html></body>
+
+</html>

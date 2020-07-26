@@ -1,31 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>前端設計 on </title>
-    <link>http://Aweiisacat.github.io/tags/%E5%89%8D%E7%AB%AF%E8%A8%AD%E8%A8%88/</link>
-    <description>Recent content in 前端設計 on </description>
+    <title>前端設計 on Website of Jane Doe</title>
+    <link>http://example.org/tags/%E5%89%8D%E7%AB%AF%E8%A8%AD%E8%A8%88/</link>
+    <description>Recent content in 前端設計 on Website of Jane Doe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 08 Jul 2020 18:18:54 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 16:30:23 +0800</lastBuildDate>
     
-	<atom:link href="http://Aweiisacat.github.io/tags/%E5%89%8D%E7%AB%AF%E8%A8%AD%E8%A8%88/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://example.org/tags/%E5%89%8D%E7%AB%AF%E8%A8%AD%E8%A8%88/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>RWD與AWD的差別</title>
-      <link>http://Aweiisacat.github.io/blog/rwd%E8%88%87awd%E7%9A%84%E5%B7%AE%E5%88%A5/</link>
-      <pubDate>Wed, 08 Jul 2020 18:18:54 +0800</pubDate>
+      <link>http://example.org/post/rwd%E8%88%87awd%E7%9A%84%E5%B7%AE%E5%88%A5/</link>
+      <pubDate>Wed, 08 Jul 2020 16:30:23 +0800</pubDate>
       
-      <guid>http://Aweiisacat.github.io/blog/rwd%E8%88%87awd%E7%9A%84%E5%B7%AE%E5%88%A5/</guid>
-      <description>前言 在這個時代用手機看網頁已經是稀鬆平常事，身為前後端也必須要了解基本的 RWD ，但在有一天讓我知道了 AWD ，在好奇心的驅使下想與 RWD 進行比較，為什麼 AWD 適合用在什麼網站?為什麼都不會考慮使用 AWD ?
-RWD (Responsive Web Design) 響應式網頁設計 與 AWD (Adaptive Web Design) 自適應式網頁設計 的差別以及優缺點 RWD與AWD在開發上， AWD 是屬於比較麻煩的開發模式，因為它在各個裝置下都有不同的 CSS 檔，與RWD相比它只有一種 CSS 檔，所以從這邊可以了解到AWD開發是非常耗時耗力的一種網頁設計方式。
-效能: RWD :因為所有的裝置都使用同一個 CSS 碼，所以較無法針對行動裝置做圖片顯示的最佳化，加上 RWD 網頁的機制是將資訊先下載後，再根據裝置寬度重新排列，所以會較慢。
-AWD :行動裝置網頁載入更快 可針對行動裝置而做優化，將原本的大圖縮減成最合適的尺寸，減少不必要的大圖，就能加快行動裝置的網頁 loading。
-維護效率: RWD :如果在大型專案裡 CSS 裡要維護會非常困難，因為只要改錯一個東西就會可能影響到其他不需要修改的地方導致畫面爆炸。
-AWD :因為 AWD 在各個裝置都有相對應的 CSS 檔，維護上很好維護，不用東找西找讓自己眼睛痛。
-結尾: 研究下來發現使用 AWD 或 RWD 沒有所謂的好壞，因應專案的關係去選擇哪一種設計模式適合還有長久問題，但現在手機硬體一年比一年好的情況下 AWD 設計理念下特別突出的 UI/UX 也逐漸變得不是特別強勢，加上還有 AWD 價格比較貴，眾多才會選擇 RWD ，變成業界上的趨勢。
-參考資料 什麼是適應式網頁設計(AWD)?
-RWD和AWD是啥?差別又是什麼?前端工程師課程大解密!</description>
+      <guid>http://example.org/post/rwd%E8%88%87awd%E7%9A%84%E5%B7%AE%E5%88%A5/</guid>
+      <description>前言 在這個時代用手機看網頁已經是稀鬆平常事，身為前後端也必須要了解基本的 RWD ，但在有一天讓我知道了 AWD ，在好奇心的驅使下想與 RWD 進行比較，為什麼 AWD 適合用在什麼網站?為什麼都不會考慮使用 AWD ?</description>
     </item>
     
   </channel>
