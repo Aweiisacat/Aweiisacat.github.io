@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>環境安裝 on Website of Jane Doe</title>
-    <link>http://Aweiisacat.github.io/tags/%E7%92%B0%E5%A2%83%E5%AE%89%E8%A3%9D/</link>
+    <link>https://Aweiisacat.github.io/tags/%E7%92%B0%E5%A2%83%E5%AE%89%E8%A3%9D/</link>
     <description>Recent content in 環境安裝 on Website of Jane Doe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sun, 10 May 2020 22:18:45 +0800</lastBuildDate>
     
-	<atom:link href="http://Aweiisacat.github.io/tags/%E7%92%B0%E5%A2%83%E5%AE%89%E8%A3%9D/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://Aweiisacat.github.io/tags/%E7%92%B0%E5%A2%83%E5%AE%89%E8%A3%9D/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ruby on Rails postgresql在ubuntu遇到的問題</title>
-      <link>http://Aweiisacat.github.io/post/firstblog/</link>
+      <link>https://Aweiisacat.github.io/post/firstblog/</link>
       <pubDate>Sun, 10 May 2020 22:18:45 +0800</pubDate>
       
-      <guid>http://Aweiisacat.github.io/post/firstblog/</guid>
+      <guid>https://Aweiisacat.github.io/post/firstblog/</guid>
       <description>當你安裝postgres時bundle install不順的時候就是你缺少一個套件就是
 sudo apt-get install libpq-dev
 開啟專案的時候一定要養成好習慣先開啟postgresql的伺服器:

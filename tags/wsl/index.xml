@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WSL on Website of Jane Doe</title>
-    <link>http://Aweiisacat.github.io/tags/wsl/</link>
+    <link>https://Aweiisacat.github.io/tags/wsl/</link>
     <description>Recent content in WSL on Website of Jane Doe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Wed, 01 Jul 2020 16:29:59 +0800</lastBuildDate>
     
-	<atom:link href="http://Aweiisacat.github.io/tags/wsl/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://Aweiisacat.github.io/tags/wsl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ubuntu Setting(WSL)</title>
-      <link>http://Aweiisacat.github.io/post/wsl/</link>
+      <link>https://Aweiisacat.github.io/post/wsl/</link>
       <pubDate>Wed, 01 Jul 2020 16:29:59 +0800</pubDate>
       
-      <guid>http://Aweiisacat.github.io/post/wsl/</guid>
+      <guid>https://Aweiisacat.github.io/post/wsl/</guid>
       <description>如何在Ubuntu 設定標題以及顯示git分支 第一步就是打開你的終端機確認自己的位子是在&amp;quot;~&amp;quot;位子，如果是Windows開發者可能會在”/mnt/c/Users/你的User名稱&amp;quot;打個
 cd 就可以回到&amp;quot;~&amp;quot;位子
 第二步就是指令
