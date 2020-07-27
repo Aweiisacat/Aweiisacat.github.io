@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>基本技術知識 on Website of Jane Doe</title>
-    <link>http://example.org/tags/%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%A1%93%E7%9F%A5%E8%AD%98/</link>
+    <link>http://Aweiisacat.github.io/tags/%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%A1%93%E7%9F%A5%E8%AD%98/</link>
     <description>Recent content in 基本技術知識 on Website of Jane Doe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 17 Jul 2020 16:29:35 +0800</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%A1%93%E7%9F%A5%E8%AD%98/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://Aweiisacat.github.io/tags/%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%A1%93%E7%9F%A5%E8%AD%98/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CORS了解跨來源資源共享</title>
-      <link>http://example.org/post/cors/</link>
+      <link>http://Aweiisacat.github.io/post/cors/</link>
       <pubDate>Fri, 17 Jul 2020 16:29:35 +0800</pubDate>
       
-      <guid>http://example.org/post/cors/</guid>
+      <guid>http://Aweiisacat.github.io/post/cors/</guid>
       <description>前言 在做 Chrome Extension 的登入登出的時候，遇到了所謂的 CORS 的問題，當時並沒有了解它本身，只是想盡辦法讓資料成功打到 Server 端並回傳一個資料給 Extension 儲存下來，結束之後決定來深入了解 CORS 是什麼。</description>
     </item>
     

@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Website of Jane Doe</title>
-    <link>http://example.org/post/</link>
+    <link>http://Aweiisacat.github.io/post/</link>
     <description>Recent content in Posts on Website of Jane Doe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 17 Jul 2020 16:29:35 +0800</lastBuildDate>
     
-	<atom:link href="http://example.org/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://Aweiisacat.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CORS了解跨來源資源共享</title>
-      <link>http://example.org/post/cors/</link>
+      <link>http://Aweiisacat.github.io/post/cors/</link>
       <pubDate>Fri, 17 Jul 2020 16:29:35 +0800</pubDate>
       
-      <guid>http://example.org/post/cors/</guid>
+      <guid>http://Aweiisacat.github.io/post/cors/</guid>
       <description>前言 在做 Chrome Extension 的登入登出的時候，遇到了所謂的 CORS 的問題，當時並沒有了解它本身，只是想盡辦法讓資料成功打到 Server 端並回傳一個資料給 Extension 儲存下來，結束之後決定來深入了解 CORS 是什麼。</description>
     </item>
     
     <item>
       <title>Var、let和const的差別</title>
-      <link>http://example.org/post/varlet%E5%92%8Cconst%E7%9A%84%E5%B7%AE%E5%88%A5/</link>
+      <link>http://Aweiisacat.github.io/post/varlet%E5%92%8Cconst%E7%9A%84%E5%B7%AE%E5%88%A5/</link>
       <pubDate>Mon, 13 Jul 2020 16:33:50 +0800</pubDate>
       
-      <guid>http://example.org/post/varlet%E5%92%8Cconst%E7%9A%84%E5%B7%AE%E5%88%A5/</guid>
+      <guid>http://Aweiisacat.github.io/post/varlet%E5%92%8Cconst%E7%9A%84%E5%B7%AE%E5%88%A5/</guid>
       <description>var 、 let 和 const 的由來 以前 JavaScript 沒有所謂的 let 和 const ，都是用 var 來宣告變數，直到 ES6 的出現 let 來取代 var ， 為什麼 let 出來就是來取代 var 呢?</description>
     </item>
     
     <item>
       <title>RWD與AWD的差別</title>
-      <link>http://example.org/post/rwd%E8%88%87awd%E7%9A%84%E5%B7%AE%E5%88%A5/</link>
+      <link>http://Aweiisacat.github.io/post/rwd%E8%88%87awd%E7%9A%84%E5%B7%AE%E5%88%A5/</link>
       <pubDate>Wed, 08 Jul 2020 16:30:23 +0800</pubDate>
       
-      <guid>http://example.org/post/rwd%E8%88%87awd%E7%9A%84%E5%B7%AE%E5%88%A5/</guid>
+      <guid>http://Aweiisacat.github.io/post/rwd%E8%88%87awd%E7%9A%84%E5%B7%AE%E5%88%A5/</guid>
       <description>前言 在這個時代用手機看網頁已經是稀鬆平常事，身為前後端也必須要了解基本的 RWD ，但在有一天讓我知道了 AWD ，在好奇心的驅使下想與 RWD 進行比較，為什麼 AWD 適合用在什麼網站?為什麼都不會考慮使用 AWD ?</description>
     </item>
     
     <item>
       <title>Ubuntu Setting(WSL)</title>
-      <link>http://example.org/post/wsl/</link>
+      <link>http://Aweiisacat.github.io/post/wsl/</link>
       <pubDate>Wed, 01 Jul 2020 16:29:59 +0800</pubDate>
       
-      <guid>http://example.org/post/wsl/</guid>
+      <guid>http://Aweiisacat.github.io/post/wsl/</guid>
       <description>如何在Ubuntu 設定標題以及顯示git分支 第一步就是打開你的終端機確認自己的位子是在&amp;quot;~&amp;quot;位子，如果是Windows開發者可能會在”/mnt/c/Users/你的User名稱&amp;quot;打個
 cd 就可以回到&amp;quot;~&amp;quot;位子
 第二步就是指令
@@ -52,10 +52,10 @@ vim .bashrc #進入編輯.bashrc的檔案 .bashrc檔案裡是關於bash的設定
     
     <item>
       <title>Astro Camp 第四屆 模擬面試心得</title>
-      <link>http://example.org/post/%E9%9D%A2%E8%A9%A6%E6%A8%A1%E6%93%AC/</link>
+      <link>http://Aweiisacat.github.io/post/%E9%9D%A2%E8%A9%A6%E6%A8%A1%E6%93%AC/</link>
       <pubDate>Tue, 12 May 2020 00:11:09 +0800</pubDate>
       
-      <guid>http://example.org/post/%E9%9D%A2%E8%A9%A6%E6%A8%A1%E6%93%AC/</guid>
+      <guid>http://Aweiisacat.github.io/post/%E9%9D%A2%E8%A9%A6%E6%A8%A1%E6%93%AC/</guid>
       <description>在履歷方面工作經歷和學歷都要擺在最下面
 畢竟這對我來說不是一個特別搶眼的項目才建議我擺在最下面
 在履歷上的技能樹上 ruby on rails 多寫一些gem
@@ -64,10 +64,10 @@ vim .bashrc #進入編輯.bashrc的檔案 .bashrc檔案裡是關於bash的設定
     
     <item>
       <title>Ruby on Rails postgresql在ubuntu遇到的問題</title>
-      <link>http://example.org/post/firstblog/</link>
+      <link>http://Aweiisacat.github.io/post/firstblog/</link>
       <pubDate>Sun, 10 May 2020 22:18:45 +0800</pubDate>
       
-      <guid>http://example.org/post/firstblog/</guid>
+      <guid>http://Aweiisacat.github.io/post/firstblog/</guid>
       <description>當你安裝postgres時bundle install不順的時候就是你缺少一個套件就是
 sudo apt-get install libpq-dev
 開啟專案的時候一定要養成好習慣先開啟postgresql的伺服器:

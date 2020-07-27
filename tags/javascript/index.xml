@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaScript on Website of Jane Doe</title>
-    <link>http://example.org/tags/javascript/</link>
+    <link>http://Aweiisacat.github.io/tags/javascript/</link>
     <description>Recent content in JavaScript on Website of Jane Doe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 17 Jul 2020 16:29:35 +0800</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://Aweiisacat.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CORS了解跨來源資源共享</title>
-      <link>http://example.org/post/cors/</link>
+      <link>http://Aweiisacat.github.io/post/cors/</link>
       <pubDate>Fri, 17 Jul 2020 16:29:35 +0800</pubDate>
       
-      <guid>http://example.org/post/cors/</guid>
+      <guid>http://Aweiisacat.github.io/post/cors/</guid>
       <description>前言 在做 Chrome Extension 的登入登出的時候，遇到了所謂的 CORS 的問題，當時並沒有了解它本身，只是想盡辦法讓資料成功打到 Server 端並回傳一個資料給 Extension 儲存下來，結束之後決定來深入了解 CORS 是什麼。</description>
     </item>
     
     <item>
       <title>Var、let和const的差別</title>
-      <link>http://example.org/post/varlet%E5%92%8Cconst%E7%9A%84%E5%B7%AE%E5%88%A5/</link>
+      <link>http://Aweiisacat.github.io/post/varlet%E5%92%8Cconst%E7%9A%84%E5%B7%AE%E5%88%A5/</link>
       <pubDate>Mon, 13 Jul 2020 16:33:50 +0800</pubDate>
       
-      <guid>http://example.org/post/varlet%E5%92%8Cconst%E7%9A%84%E5%B7%AE%E5%88%A5/</guid>
+      <guid>http://Aweiisacat.github.io/post/varlet%E5%92%8Cconst%E7%9A%84%E5%B7%AE%E5%88%A5/</guid>
       <description>var 、 let 和 const 的由來 以前 JavaScript 沒有所謂的 let 和 const ，都是用 var 來宣告變數，直到 ES6 的出現 let 來取代 var ， 為什麼 let 出來就是來取代 var 呢?</description>
     </item>
     
