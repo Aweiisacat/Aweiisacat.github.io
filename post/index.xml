@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Website of Jane Doe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 17 Jul 2020 16:29:35 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2020 16:02:51 +0800</lastBuildDate>
     
 	<atom:link href="https://Aweiisacat.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript30_Day1</title>
+      <link>https://Aweiisacat.github.io/post/javascript30_day1/</link>
+      <pubDate>Fri, 24 Jul 2020 16:02:51 +0800</pubDate>
+      
+      <guid>https://Aweiisacat.github.io/post/javascript30_day1/</guid>
+      <description>挑戰JavaScript30的第一天 知道可以利用 window 監聽 keydown 事件來偵測使用者按下的按鍵
+window.addEventListener(&amp;#39;keydown&amp;#39;, e =&amp;gt; { console.</description>
+    </item>
     
     <item>
       <title>CORS了解跨來源資源共享</title>

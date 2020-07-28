@@ -4,27 +4,28 @@
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.74.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="當你跌到谷底時，那正表示，你只能往上，不能往下！ ">
     
-    <link rel="stylesheet" href="http://example.org/css/style.min.67cd718c0a3c8009c771494d381fb7128246a454bd0518fed97cb65d257db948.css" integrity="sha256-Z81xjAo8gAnHcUlNOB&#43;3EoJGpFS9BRj&#43;2Xy2XSV9uUg=" crossorigin="anonymous" type="text/css"><link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://Aweiisacat.github.io/css/style.min.67cd718c0a3c8009c771494d381fb7128246a454bd0518fed97cb65d257db948.css" integrity="sha256-Z81xjAo8gAnHcUlNOB&#43;3EoJGpFS9BRj&#43;2Xy2XSV9uUg=" crossorigin="anonymous" type="text/css"><link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     
-    <link rel="shortcut icon" href="http://example.org/favicons/cat16x16.icofavicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="http://example.org/favicons/cat16x16.icoapple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="http://example.org/favicons/cat16x16.icofavicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="http://example.org/favicons/cat16x16.icofavicon-16x16.png">
-    <link rel="canonical" href="http://example.org/post/javascript30_day1/">
+    <link rel="shortcut icon" href="https://Aweiisacat.github.io/favicons/cat16x16.icofavicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://Aweiisacat.github.io/favicons/cat16x16.icoapple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://Aweiisacat.github.io/favicons/cat16x16.icofavicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://Aweiisacat.github.io/favicons/cat16x16.icofavicon-16x16.png">
+    <link rel="canonical" href="https://Aweiisacat.github.io/post/javascript30_day1/">
     
     
-    <script type="text/javascript" src="http://example.org/js/anatole-header.min.c275265a259296f3dd50e8236a77fcbcadb1dbb9597d3045c675dcc2c7c58a93.js" integrity="sha256-wnUmWiWSlvPdUOgjanf8vK2x27lZfTBFxnXcwsfFipM=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://Aweiisacat.github.io/js/anatole-header.min.c275265a259296f3dd50e8236a77fcbcadb1dbb9597d3045c675dcc2c7c58a93.js" integrity="sha256-wnUmWiWSlvPdUOgjanf8vK2x27lZfTBFxnXcwsfFipM=" crossorigin="anonymous"></script>
     <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="http://example.org/images/cat.png"/>
+<meta name="twitter:image" content="https://Aweiisacat.github.io/images/cat.png"/>
 
 <meta name="twitter:title" content="JavaScript30_Day1"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="挑戰JavaScript30的第一天 知道可以利用 window 監聽 keydown 事件來偵測使用者按下的按鍵
+window.addEventListener(&#39;keydown&#39;, e =&gt; { console."/>
 
 </head><body><div class="sidebar animated fadeInDown">
     <div class="logo-title">
       <div class="title">
-        <img src="http://example.org/images/cat.jpg" alt="profile picture">
-        <h3 title=""><a href="/">劉家維</a></h3>
+        <img src="https://Aweiisacat.github.io/images/cat.jpg" alt="profile picture">
+        <h3 title=""><a href="/">阿維</a></h3>
         <div class="description">
           <p>當你跌到谷底時，那正表示，你只能往上，不能往下！ </p>
         </div>
@@ -91,12 +92,40 @@
         
         <div class="info">
           <i class="fa fa-sun-o"></i><span class="date">Fri, Jul 24, 2020</span>
-          <i class="fa fa-clock-o"></i><span class="reading-time">0-minute read</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">1-minute read</span>
         </div>
         
         </div>
 
-    
+    <h2 id="挑戰javascript30的第一天">挑戰JavaScript30的第一天</h2>
+<p>知道可以利用 window 監聽 keydown 事件來偵測使用者按下的按鍵</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;keydown&#39;</span>, <span style="color:#a6e22e">e</span> =&gt; {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">key</span>); <span style="color:#75715e">//可以知道按下的字母是什麼字
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span>); <span style="color:#75715e">//字母所代表的鍵碼
+</span><span style="color:#75715e"></span>})
+</code></pre></div><p>原來 HTML 標籤 data 是一個可以自行定義的屬性，並用 JavaScript 來操作各個 audio</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">audio</span> <span style="color:#a6e22e">data-key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;65&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sounds/clap.wav&#34;</span>&gt;&lt;/<span style="color:#f92672">audio</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;keydown&#39;</span>, <span style="color:#a6e22e">e</span> =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">audio</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">`audio[data-key=&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;]`</span>);
+  <span style="color:#a6e22e">audio</span>.<span style="color:#a6e22e">play</span>(); <span style="color:#75715e">//會撥放對應案件的音效
+</span><span style="color:#75715e"></span>})
+</code></pre></div><p>以及 currentTime 對 audio 音效檔進行重製</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;keydown&#39;</span>, <span style="color:#a6e22e">e</span> =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">audio</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">`audio[data-key=&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;]`</span>);
+  <span style="color:#a6e22e">audio</span>.<span style="color:#a6e22e">currentTime</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">//讓音效檔回歸初始點
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">audio</span>.<span style="color:#a6e22e">play</span>(); <span style="color:#75715e">//會撥放對應案件的音效
+</span><span style="color:#75715e"></span>})
+</code></pre></div><h3 id="transitionend-監聽事件">transitionend 監聽事件</h3>
+<p>利用transitionend事件，監聽所有 block 上有 transition 的 CSS 屬性，並且透過 propertyName 來判斷是哪個 css 屬性：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">block</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.block&#39;</span>);
+<span style="color:#75715e">// 監聽所有 block 上有 transition 的 CSS 屬性
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">block</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;transitionend&#39;</span>, <span style="color:#a6e22e">e</span> =&gt; {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">propertypeName</span>)
+})
+</code></pre></div><h2 id="結尾">結尾</h2>
+<p>過程中嘗試以自己的能力去仿造一個與主題相同的功能，最後是每次按住按鍵沒辦法觸發audio，知道currentTime這個屬性。</p>
+<p>最後對於用 window 監聽事件感到好奇，改成 document 是不是也可以，答案是可以的，但還是不清楚 window 和 document 的差別，特別去查了<a href="https://www.zhihu.com/question/33453164">相關資料</a>去了解一番。</p>
+
     </div>
     <div class="post-footer">
       <div class="info">
@@ -120,13 +149,13 @@
 
 
 
-<script type="text/javascript" src="http://example.org/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js" integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://Aweiisacat.github.io/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js" integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin="anonymous"></script>
 
 
 
 
-<script type="text/javascript" src="http://example.org/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js" integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://Aweiisacat.github.io/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js" integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="http://example.org/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js" integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro=" crossorigin="anonymous"></script></html></body>
+<script type="text/javascript" src="https://Aweiisacat.github.io/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js" integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro=" crossorigin="anonymous"></script></html></body>
 
 </html>

@@ -6,7 +6,7 @@
     <description>Recent content on Website of Jane Doe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 17 Jul 2020 16:29:35 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2020 16:02:51 +0800</lastBuildDate>
     
 	<atom:link href="https://Aweiisacat.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +17,20 @@
       <pubDate>Sun, 26 Jul 2020 16:01:44 +0800</pubDate>
       
       <guid>https://Aweiisacat.github.io/about/</guid>
-      <description></description>
+      <description>你好，我是阿維，我是一名前端工程師。
+對我來說寫程式就像是我玩線上遊戲一樣，練到一定的等級就可以出去工作。
+但寫技術文章就不太一樣，因為這很像遊戲的排名戰，每一篇文章都是為了證明自己的技術知識，希望能讓看到的人都覺得寫的文章很厲害很強，慢慢的口耳相傳變成業界上的大大。
+而我的目標就是希望能成為前端的大大。</description>
+    </item>
+    
+    <item>
+      <title>JavaScript30_Day1</title>
+      <link>https://Aweiisacat.github.io/post/javascript30_day1/</link>
+      <pubDate>Fri, 24 Jul 2020 16:02:51 +0800</pubDate>
+      
+      <guid>https://Aweiisacat.github.io/post/javascript30_day1/</guid>
+      <description>挑戰JavaScript30的第一天 知道可以利用 window 監聽 keydown 事件來偵測使用者按下的按鍵
+window.addEventListener(&amp;#39;keydown&amp;#39;, e =&amp;gt; { console.</description>
     </item>
     
     <item>
